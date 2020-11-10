@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>Watch option</title>
+</head>
+<body>
+    <h1>Watch option</h1>
+    <hr>
+    <div id="app">
+        <p>今日温度：{{temperature}}°C</p>
+        <p>穿衣建议:{{this.suggestion}}</p>
+        <p>
+            <button @click="add">添加温度</button>
+            <button @click="reduce">减少温度</button>
+
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        var suggestion=['T恤短袖','夹克长裙','棉衣羽绒服'];
+        var app=new Vue({
+            el:'#app',
+            data:{
+                temperature:14,
+                suggestion:'夹克长裙'
+            },
+            methods:{
+                add:function(){
+                    this.temperature+=5;
+                },
+                reduce:function(){
+                    this.temperature-=5;
+                }
+            },
+            // watch:{
+            //     temperature:function(newVal,oldVal){
+            //         if(newVal>=26){
+            //             this.suggestion=suggestion[0];
+            //         }else if(newVal<26 && newVal >=0)
+            //         {
+            //             this.suggestion=suggestion[1];
+            //         }else{
+            //             this.suggestion=suggestion[2];
+            //         }
+            //     }
+            // }
+
+        })
+       app.$watch('temperature',function(newVal,oldVal){
+            if(newVal>=26){
+                this.suggestion=suggestion[0];
+            }else if(newVal<26 && newVal >=0)
+            {
+                this.suggestion=suggestion[1];
+            }else{
+                this.suggestion=suggestion[2];
+            }
+
+        })
+//  对于一些需要变动的值，比如最初的时候有一个值，在之后我们要将他进行改变。
+// 可选的思路：
+// 1.通过change或者click等这类事件来触发一个函数，在函数内部去修改一个变量。
+// 2.通过watch的方法，监听被改变的变量，然后在watch的那个变量命名的函数中去对我们要修改的值进行重新的赋值，或者是触发一次更新。
+// 3.使用computed的方法，监听一个变量，通过return一个新的变量的方式来更新一个变量的数据。
+    </script>
+</body>
+</html>

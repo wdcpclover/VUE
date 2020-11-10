@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>vue.extend</title>
+</head>
+<body>
+    <h1>Vue.extend</h1>
+    <hr>
+    
+	<ddd></ddd>
+
+	<div id="wxy" class="">
+		
+	</div>
+    <script type="text/javascript">
+        var authorExtend = Vue.extend({
+            template:"<p><a :href='authorUrl'>{{authorName}}</a></p>",
+            data:function(){
+                return{
+                    authorName:'zzu',
+                    authorUrl:'http://www.zzu.edu.cn'
+                }
+            }
+        });   
+       <!-- console.log(new authorExtend()); -->
+       new authorExtend().$mount('ddd');
+	   new authorExtend().$mount("#wxy");
+
+    </script>
+</body>
+</html>

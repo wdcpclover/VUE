@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png">
+    <link rel="stylesheet" href="#">
+    <title>Form表单注册面学习</title>
+
+</head>
+<body>
+<!--action 定义表单数据提交地址-->
+<form action="http://127.0.0.1:8000/post_info" method="post" enctype="multipart/form-data">
+    <!--单行文本框-->
+    <input type="text" name="username" placeholder="请输入账号"><br><br>
+    <!--密码框-->
+    <input type="password" name="password" placeholder="请输入密码"><br><br>
+    <!--单选框-->
+    性别：<label><input type="radio" name="sex" value="1">男</label>
+    <label><input type="radio" name="sex" value="2">女</label>
+    <!--多选框-->
+    <br><br>
+    最喜欢的游戏：
+    <label><input type="checkbox" name="fav" value="LOL">英雄联盟</label>
+    <label><input type="checkbox" name="fav" value="shoot">喷射战士</label>
+    <label><input type="checkbox" name="fav" value="zelder">塞尔达传说</label>
+    <label><input type="checkbox" name="fav" value="mario">马里奥</label>
+    <!--上传图片-->
+    <br><br>
+    <input type="file" name="pic">
+    <!--多行文本框-->
+    <br><br>
+    <textarea name="text" cols="30" rows="10"></textarea>
+    <!--下拉列表-->
+    <br><br>
+    <select name="city">
+        <option value="gz">广州</option>
+        <option value="sz">深圳</option>
+        <option value="zh">中山</option>
+    </select>
+    <!--提交表单-->
+    <input type="submit" value="提交">
+    <!--重置表单-->
+    <input type="reset" value="重置">
+</form>
+</body>
+</html>
+
+</body>
+</html>

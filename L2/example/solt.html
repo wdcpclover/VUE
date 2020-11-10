@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>Slot content extend Demo</title>
+</head>
+<body>
+    <h1>Slot content extend Demo</h1>
+    <hr>
+    <div id="app">
+    <blog>
+        <span slot="bolgUrl">{{blogData.bolgUrl}}</span>    
+        <span slot="netName">{{blogData.netName}}</span>    
+        <span slot="skill">{{blogData.skill}}</span>    
+    </blog>
+    </div>
+
+
+<template id="tmp">
+    <div>
+        <p>博客地址：<slot name="bolgUrl"></slot></p>
+        <p>网名：<slot name="netName"></slot></p>
+        <p>技术类型：<slot name="skill"></slot></p>
+        
+    </div>
+</template>
+
+    <script type="text/javascript">
+        var blog={
+            template:'#tmp'
+        }
+
+        var app=new Vue({
+            el:'#app',
+            data:{
+               blogData:{
+                   bolgUrl:'http://zzu.edu',
+                   netName:'郑州大学',
+                   skill:'Web前端'
+               }
+            },
+            components:{
+                "blog":blog
+            }
+        })
+    </script>
+</body>
+</html>
