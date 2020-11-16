@@ -68,8 +68,12 @@ export default {
     },
     methods:{
         submitHandler(e){
-           e.preventDefault()
-            console.log('我注册了')
+            e.preventDefault()
+            this.$http.get('/api/register',{params:this.model}).then(res=>{
+                console.log(res.success)
+            }).catch(err=>{
+                console.log(err)
+            })
         }
     }
 }
@@ -77,7 +81,7 @@ export default {
 
 <style lang="stylus" scoped>
     .headerimg
-        height  150px
+        height  100px
         width  100%
 </style>
 

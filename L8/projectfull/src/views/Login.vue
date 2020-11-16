@@ -66,7 +66,12 @@ export default {
             }
         }
     },
-    
+    methods:{
+        submitHandler(e){
+           e.preventDefault()
+            console.log('我登录了')
+        }
+    }
 }
 </script>
 

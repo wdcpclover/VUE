@@ -60,16 +60,26 @@ export default {
                     },
                     {
                         type:'submit',
-                        label:'注册'
+                        label:'登录'
                     }
                 ]
             }
         }
     },
-    methods:{
-        submitHandler(e){
-           e.preventDefault()
-            console.log('我注册了')
+     methods:{
+       async submitHandler(e){
+            e.preventDefault()
+            try{
+                const result=await this.$http.get('/api/login',{params:this.model})
+                if(result.code=='0'){
+                    this.$store.commit('settoken',result.token)
+                    window.localStorage.setItem('token',result.token)
+                }else{
+                     alert(result.message)
+                }
+            }catch(err){
+                console.log(err)
+            }
         }
     }
 }
@@ -77,7 +87,7 @@ export default {
 
 <style lang="stylus" scoped>
     .headerimg
-        height  150px
+        height  100px
         width  100%
 </style>
 
