@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
-
+import Index from '../views/Index.vue'
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
@@ -23,6 +23,14 @@ const routes: Array<RouteConfig> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: Login
+  },
+  {
+    path: '/index',
+    name: 'index',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: Index
   }
 ]
 

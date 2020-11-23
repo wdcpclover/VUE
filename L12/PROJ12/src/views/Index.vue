@@ -1,7 +1,6 @@
 <template>
     <div id="index">
         <!-- 轮播图 -->
-        <div>
         <cube-slide ref="slide" :data="items" @change="changePage">
             <cube-slide-item v-for="(item, index) in items" :key="index" @click.native="clickHandler(item, index)">
                 <a :href="item.url">
@@ -9,8 +8,6 @@
                 </a>
             </cube-slide-item>
         </cube-slide>
-        </div>
-        <div>
         <!-- 滚动分类 -->
         <cube-slide ref="slidelists" :auto-play="false" :data="lists">
             <cube-slide-item v-for="(list, index) in lists" :key="index">
@@ -24,7 +21,6 @@
                </ul>
             </cube-slide-item>
         </cube-slide>
-      </div>
     </div>
 </template>
 
@@ -32,32 +28,19 @@
 export default {
   data() {
     return {
-      items: [
-        // {
-        //   url: 'http://www.zzu.edu.cn/',
-        //   image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide01.png'
-        // },
-        // {
-        //   url: 'http://www.didichuxing.com/',
-        //   image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide02.png'
-        // },
-        // {
-        //   url: 'http://www.didichuxing.com/',
-        //   image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide03.png'
-        // }
-      ],
+      items: [],//轮播图数组
       lists:[],//滚动分类数组
     }
   },
   methods: {
     changePage(current) {
-      console.log('当前轮播图序号为:' + current)
+    //   console.log('当前轮播图序号为:' + current)
     },
     clickHandler(item, index) {
       console.log(item, index)
     }
   },
-   async created(){
+ async created(){
      try{
          //获取轮播图数据
          const items=await this.$http.get('/api/banner')
@@ -69,7 +52,6 @@ export default {
          console.log(err)
      }
   }
-  
 }
 </script>
 
@@ -95,3 +77,4 @@ export default {
                 font-size  14px
                 padding-bottom  10px
 </style>
+
