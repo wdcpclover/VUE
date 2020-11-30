@@ -23,7 +23,7 @@
              >
                 <div class="ball" v-if="ball.show">
                     <div class="inner">
-                        <i class="cubeic-add"></i>
+                        <i class="cubeic-mall"></i>
                     </div>
                 </div>
              </transition>

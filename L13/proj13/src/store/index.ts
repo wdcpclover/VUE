@@ -7,7 +7,7 @@ let store=new Vuex.Store({
   state: {
     token:'',
     cartarry:JSON.parse(String(localStorage.getItem('cartarry'))) || [],//存储购物车商品的数组
-    
+    // cartarry：[],
   },
   mutations: {
     //设置vuex的token

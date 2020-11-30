@@ -27,7 +27,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/index',
     name: 'index',
-    component: () => import('../views/Index.vue')
+    // component: () => import('../views/Index.vue')
   },
   {
     path: '/botnav',
