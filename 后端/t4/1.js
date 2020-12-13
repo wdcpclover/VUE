@@ -1,7 +1,8 @@
 //定义主函数，回调函数作为参数
 function a(callback) {
-         console.log('我是主函数'); 
+       
          callback(); 
+         console.log('我是主函数'); 
 }
 //定义回调函数
 function b(){

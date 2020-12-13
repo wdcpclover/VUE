@@ -10,6 +10,6 @@
         })
     }
 
-    judgeNumber(2)
+    judgeNumber('2')
         .then(num => console.log(num))
-        .catch(err => console.log(err))
+        // .catch(err => console.log(err))

@@ -11,7 +11,7 @@ https.get('https://www.baidu.com',(res)=>{
   res.on('end',()=>{
     // console.log(html)
     const $ = cheerio.load(html);
-    console.log($('title').text());
+    console.log($("div").text());
     fs.writeFile('./index.txt',html,(err) => {
       if(err) throw err;
       console.log('写入成功')

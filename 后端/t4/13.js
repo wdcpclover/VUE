@@ -12,7 +12,7 @@ function fn2() {
         setTimeout(() => {
             console.log('任务2')
             resolve()
-        },1000)
+        },2000)
     })
 }   
 

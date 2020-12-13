@@ -8,7 +8,7 @@
     function fn2() {
         setTimeout(() => {
             console.log('任务2')
-        },1000)
+        },2000)
     }
 
     function fn3() {
