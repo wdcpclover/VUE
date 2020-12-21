@@ -3,7 +3,8 @@ const http = require('http');
 
 const server = http.createServer((req,res) => {
   let urlObj = url.parse(req.url,true);
-//   console.log(urlobj);
+  
+console.log(urlobj);
   res.end(JSON.stringify(urlObj.query))
 })
 

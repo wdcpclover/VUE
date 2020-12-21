@@ -1,7 +1,7 @@
 const url = require('url');
 const http = require('http');
 const server = http.createServer((req, res) => {
-  console.log(2)
+  console.log(1)
   if (req.method === 'GET') {
     let urlObj = url.parse(req.url, true);
     res.end(JSON.stringify(urlObj.query))
